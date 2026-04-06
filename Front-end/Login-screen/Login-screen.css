@@ -1,6 +1,8 @@
 .container{
     display: flex;
     height: 100vh;
+    background-color: black;
+    position: relative;
 }
 
 .image-side{
@@ -8,15 +10,29 @@
     background-image: url('https://imgs.search.brave.com/BZfIhbTFK3zi5P3FCKiqXZxdc81Vcvn2-BrKlG-GhxM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2Q5Lzlj/L2EyL2Q5OWNhMmE2/NTBlNDYxYTdjYzMx/ZDhlODQyNzZkM2Uz/LmpwZw');
     background-size: cover; 
     background-position: center;
+    position: relative;
 }   
 
 
 .form-side{
     width: 50%; 
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     padding: 40px;
+}
+
+.image-side::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100%; 
+    background:linear-gradient(to right, transparent, black);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .FlyDreamLogin{
@@ -25,7 +41,7 @@
     margin: 20px; 
     padding: 20px; 
     width: 200px;
-    border-radius: 5px;
+    border-radius: 10px;
     left: 30px;
 }
 .EmailForm{

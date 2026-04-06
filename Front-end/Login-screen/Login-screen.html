@@ -3,7 +3,7 @@
 <html>
     <!-- Using an external css file for better managment and resuablility-->
     <head> 
-        <link rel="stylesheet" href="Login-screen.css"></head>
+        <link rel="stylesheet" href="Login-screen.css">
     </head>
     <body>
         <div class="container">
@@ -14,7 +14,7 @@
             <div class="form-side">
                 <!-- The header of the web-page-->
                 <div> 
-                    <h1 style="padding: 20px;">Flying like a dream</h1>
+                    <h1 style="padding: 20px; color: white;">Flying like a dream</h1>
                 </div>
 
                 <!--Creating the user login form for the webpage to allow for the process of data-->
@@ -24,12 +24,12 @@
                         <!-- Creating seperate divs so that the forms can be spaced properly-->
                         <div class="EmailForm">
                             <label for="email">Email:</label><br>
-                            <input type="text" id="email" name="email"><br> 
+                            <input type="text" id="email" name="email" required><br> 
                         </div>
 
                         <div class="PasswordForm">
-                            <label for="passowrd">Password:</label><br>
-                            <input type="text" id="password" name="password"><br>
+                            <label for="password">Password:</label><br>
+                            <input type="password" id="password" name="password" required><br>
                         </div>
 
                         <!-- Sumbit and button input for the web-page -->
