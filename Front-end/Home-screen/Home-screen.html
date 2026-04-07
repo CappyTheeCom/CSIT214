@@ -2,7 +2,7 @@
 <html> 
     <!--Home screen CSS-->
     <header>
-        <link ref="stylesheet" href="Home-screen.css">
+        <link rel="stylesheet" href="Home-screen.css">
     </header>
 
     <body>
@@ -11,29 +11,50 @@
         <div class="home-component">
 
             <!--creating search field to see if anything available-->
-            <div class="Search-Field">
+            <div class="flight-booking">
 
-                <h2> Look for a flight</h2>
+                <h2 class="flight-title"> Look for a flight</h2>
 
-                <form> 
+                <form class="form-grid"> 
 
 
-                    <div class="From-flight">
+                    <div class="from-flight">
                         <label for="from">From:</label>
-                        <input type="text" id="from" placeholder="e.g sydney" required>
+                        <input type="text"  id="from" placeholder="e.g sydney" required>
                     </div>
 
 
-                    <div class="To-flight">
+                    <div class="to-flight">
                         <label for="to">To:</label>
-                        <input type="text" id="to" placeholder="e.g melbourne" required>
+                        <input type="text"  id="to" placeholder="e.g melbourne" required>
+                    </div>
+
+                    <div class="departure-flght">
+                        <label for="departure">Departure:</label>
+                        <input type="date"  id="Departure-flight" placeholder="e.g melbourne" required>
+                    </div>
+
+                    <div class="arrival-flight">
+                        <label for="Arrival-flight">Arrival:</label>
+                        <input type="date" id="Arrival-flight" placeholder="e.g melbourne" required>
+                    </div>
+
+                    <div> 
+                        <input type="submit" value="submit">
+                        <button type="reset">Clear</button>
                     </div>
 
                 </form>
+            <!-- The flight container-->
+            </div>
+
+            <!-- Making the sign in option/ sign up-->
+            <div class="user-signIn">
+                
+                <button type="button">Login-in!</button>
+                <button type="button">Sign-up!</button>
             </div>
 
         </div>
-
-
     </body>
 </html>

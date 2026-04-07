@@ -1,0 +1,25 @@
+/* Base body component of the home page */
+.home-component{
+    padding: 20px; 
+    border: 2px solid black; 
+    display: flex;
+    width: 670px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+
+
+/* creating the form-grid to make some type of symmertry */
+.form-grid{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 30px 30px;
+    align-items: center;
+}
+
+.flight-title{
+    border: 2px solid black; 
+    border-radius: 20px;
+    padding: 20px;
+    background-color: lightcoral;
+}
