@@ -8,10 +8,6 @@ document.addEventListener('DOMContentLoaded', function(){
 //creating json file for the information created from the sign-up page
 class UserInfo{
 
-    constructor(){
-        this.data = new FormData();
-    }
-
     //Checking user password to ensure to it works
     UserData(){
     //Have to put e to allow for the use of event since its only onsite. Use arrow function to allow fo this to remain in use!
