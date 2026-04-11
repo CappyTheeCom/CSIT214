@@ -16,7 +16,8 @@ public class UserData {
             // and creates the 'users' table inside it.
             String sql = "CREATE TABLE IF NOT EXISTS users (" +
                          "email TEXT PRIMARY KEY," +
-                         "name TEXT NOT NULL," +
+                         "fname TEXT NOT NULL," +
+                         "lname TEXT NOT NULL,"+
                          "password TEXT NOT NULL" +
                          ");";
             

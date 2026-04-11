@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Login interface text and information to allow users to sign in-->
+
+<html>
+    <!-- Using an external css file for better managment and resuablility-->
+    <head> 
+        <link rel="stylesheet" href="Login-screen.css">
+         <script src="Sigin-screen.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Image side of the login page-->
+            <div class="image-side"></div>
+
+            <!-- Creating the form side of the web-page-->
+            <div class="form-side">
+                <!-- The header of the web-page-->
+                <div> 
+                    <h1 style="padding: 20px; color: white;">Flying like a dream</h1>
+                </div>
+
+                <!--Creating the user login form for the webpage to allow for the process of data-->
+                <div class="FlyDreamLogin"> 
+                    <form action="/Front-end/Login-screen/Login-screen.html">
+
+
+                        <!-- Creating seperate divs so that the forms can be spaced properly-->
+                        <div class="FirstName">
+                            <label for="fname">First-Name: </label><br>
+                            <input type="text" id="fname" name="fname" required><br>
+                        </div>
+
+                        <div class="LastName">
+                            <label for="lname">Last-Name: </label><br>
+                            <input type="text" id="lname" name="lname" required><br>
+                        </div>
+
+                        <div class="EmailForm">
+                            <label for="email">Email:</label><br>
+                            <input type="text" id="email" name="email" required><br> 
+                        </div>
+
+                        <div class="PasswordForm">
+                            <label for="pass">Password:</label><br>
+                            <input type="password" id="pass" name="pass" required><br>
+                        </div>
+
+                        <div class="ConfirmPassword">
+                            <label for="conPass">Re-type Password:</label><br>
+                            <input type="password" id="conPass" name="conPass" required><br>
+                        </div>
+
+                        <!-- Sumbit and button input for the web-page -->
+                        <div>
+                            <input type="Submit" value="Submit" id="submit">
+                            <button type="reset">Clear</button>
+                        </div>
+                    </form>
+                <!-- Forms div-->
+                </div>
+            <!-- Form-side div -->
+            </div>
+        <!--Container div-->
+        </div>
+    </body>
+
+</html>
