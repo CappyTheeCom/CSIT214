@@ -16,6 +16,7 @@ class UserInfo{
     UserData(){
     //Have to put e to allow for the use of event since its only onsite. Use arrow function to allow fo this to remain in use!
     document.getElementById('submit').addEventListener('click', (e) =>{
+        e.preventDefault()
         //creating variables from the form  
         const fname = document.getElementById('fname').value;
         const lname = document.getElementById('lname').value;
@@ -27,29 +28,31 @@ class UserInfo{
 
         if(pass != conPass){
             //prevents the typical task
-            e.preventDefault()
             alert("Passwords typed are incorrect. Please try again!")
 
             }
         //Serialising the users information if the password does work and sending it over to the back-end
         else{
-            this.data.append("fname", fname);
-            this.data.append("lname", lname);
-            this.data.append("email", email);
-            this.data.append("password", pass);
-
-            const jsonData = JSON.stringify(Object.fromEntries(this.data));
+            const jsonData = JSON.stringify({email,pass,fname, lname});
             
             //sends a fetch request to the Java server itself. Allowing it to read the json data.
-            fetch('/Back-end/Database/UserData/SignInData', {
+            fetch('http://localhost:8080/user/data', {
                 method: 'POST',
                 headers: {
                     'Content-type' : 'application/json'
                 },
                 body: jsonData
             })
-        }
-        })
+            .then(response => {
+                if (response.ok){
+                    window.location.href= '/Front-end/Login-screen/Login-screen.html'
+                }else{
+                    alert("Something went wrong. Please try again!")
+                }
+            })
+            .catch(error => console.error('Error:', error));
+          }
+        });
     }
     
 }    
