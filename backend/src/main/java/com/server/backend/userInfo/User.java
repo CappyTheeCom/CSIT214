@@ -1,4 +1,4 @@
-package com.server.backend;
+package com.server.backend.userinfo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
