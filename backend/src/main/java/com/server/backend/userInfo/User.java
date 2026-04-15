@@ -1,10 +1,10 @@
-package com.server.backend;
+package com.server.backend.userinfo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
+//Makes the class a file that can be used to identify and make the current database from the json data 
 @Entity 
 @Table(name = "UserData.db")
 public class User {

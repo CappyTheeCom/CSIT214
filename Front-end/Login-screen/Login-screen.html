@@ -4,6 +4,7 @@
     <!-- Using an external css file for better managment and resuablility-->
     <head> 
         <link rel="stylesheet" href="Login-screen.css">
+        <script src="Login-screen.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -28,13 +29,13 @@
                         </div>
 
                         <div class="PasswordForm">
-                            <label for="password">Password:</label><br>
-                            <input type="password" id="password" name="password" required><br>
+                            <label for="pass">Password:</label><br>
+                            <input type="password" id="pass" name="password" required><br>
                         </div>
 
                         <!-- Sumbit and button input for the web-page -->
                         <div>
-                            <input type="Submit" value="Submit">
+                            <input type="Submit" value="Submit" id="submit">
                             <button type="reset">Clear</button>
                         </div>
                     </form>
