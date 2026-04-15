@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -32,6 +33,19 @@ public class UserInformation{
 		return ResponseEntity.ok(user);
 	}
 
+	//Retrieving user information and sending it back as an json 
+	@PostMapping("/login")
+	public boolean userLogin(@RequestParam String email, @RequestParam String pass ){
+		boolean account = userRepository.existsByEmail(email);
+
+		if(account){
+			System.out.println("Retrieving: " + email);
+			return userRepository.findByEmailAndPass(email, pass).isPresent();
+		}else{
+			System.out.println("Account: " + email + "does not exist!");
+			return false;
+		}
+	}
 
 	//creating instance for the email to be used 
 	//Checking if the user has already been validated within the database 
