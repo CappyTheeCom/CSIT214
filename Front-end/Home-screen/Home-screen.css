@@ -1,8 +1,20 @@
+/* centering the body of the work */ 
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* Base body component of the home page */
 .home-component{
     padding: 20px; 
     border: 2px solid black; 
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 670px;
     border-radius: 5px;
     background-color: antiquewhite;
@@ -22,4 +34,9 @@
     border-radius: 20px;
     padding: 20px;
     background-color: lightcoral;
+}
+
+.user-signIn{
+    margin: 20px;
+    margin-bottom:150px ;
 }
