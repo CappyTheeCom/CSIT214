@@ -29,7 +29,25 @@ class userLogin{
             .then(text => {
                 const accountValid = text.trim()
                 if(accountValid === 'true'){
-                    window.location.href = '/Front-end/Home-screen/Home-screen.html'
+
+                    const JsonData = JSON.stringify({email: this._email.value})
+
+                    //creating token info from backend 
+                    fetch(`http://localhost:8080/sesh/setToken`,{
+                    method : 'POST',
+                    headers : {
+                        'Content-type' : 'application/json'
+                    },
+                    body : JsonData
+                    })
+                    .then(response =>{
+                        if(response.ok){
+                            window.location.href = '/Front-end/Home-screen/Home-screen.html'
+                        }
+                    })
+                    .catch(error => {console.error('Error', error)})
+
+                //else if the account or password are wrong!    
                 }else{
                     alert("Account or password is wrong! Please try again!")
                 }
@@ -38,4 +56,7 @@ class userLogin{
 
         })
     }
+
+
+
 }
