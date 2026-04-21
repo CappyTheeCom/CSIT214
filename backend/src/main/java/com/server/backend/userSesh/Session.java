@@ -1,5 +1,7 @@
 package com.server.backend.usersesh;
 
+import java.time.LocalDateTime;
+
 import com.server.backend.userinfo.User;
 
 import jakarta.persistence.Entity;
@@ -19,6 +21,9 @@ public class Session{
     @OneToOne(optional=false)
     @JoinColumn(name="email",unique=true,nullable=false,updatable=false)
     private User user;
+    
+    //creating localdatetime variable 
+    private LocalDateTime expires;
 
 
 
@@ -29,10 +34,12 @@ public class Session{
     public Session(String token, User user){
         this.token =  token;
         this.user = user;
+        this.expires = LocalDateTime.now().plusHours(1);
     }
 
 
     //creates the token table to allow for the User email to be a foreign key
     public User getUserEmail(){return user;}
     public String getToken(){return token;}
+    public LocalDateTime getExpires(){return expires;}
 }
