@@ -1,5 +1,7 @@
+//package info 
 package com.server.backend.usersesh;
 
+//local java libraries for tokens
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -18,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.server.backend.userinfo.User;
 import com.server.backend.userinfo.UserRepository;
 
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 
 
@@ -26,7 +27,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
 @RequestMapping("/sesh")
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "http://127.0.0.1:5500", allowCredentials="true")
 public class UserSession{
 
     @Autowired
@@ -43,26 +44,22 @@ public class UserSession{
 
     //genearting the user cookie and token for persistent logins
     @PostMapping("/setToken")
-    public ResponseEntity setToken(HttpServletResponse response,@RequestBody User email){
+    public ResponseEntity<Object> setToken(HttpServletResponse response,@RequestBody User email){
         User existingUser = userRepository.findByEmail(email.getEmail())
             .orElseThrow(() -> new RuntimeException("User not found: " + email.getEmail()));
         //creating session token
         String token = UUID.randomUUID().toString();
         Session saved = sessionRepository.save(new Session(token,existingUser));
         System.out.println("Saved: " + saved.getToken());
-
-        //creating user cookies
-        Cookie cookie = new Cookie("session_token", token); 
-        cookie.setHttpOnly(true);
      
         //adds cook to the server response. Checking for cross user response. 
         response.setHeader("Set-Cookie",
-        "session_token=" + token + "; Path=/; HttpOnly; SameSite=None; Secure; Max-Age=3600");
+        "session_token=" + token + "; Path=/; HttpOnly; SameSite=Lax; Max-Age=3600");
         return ResponseEntity.ok(email);
     }
 
     //creating cleanup 
-    @Scheduled(fixedRate = 30 * 60000)
+    @Scheduled(fixedRate = 60000)
     public void deleteExpiredSession(){
         //deletes the session where the expired date meets the date time
         sessionRepository.deleteByExpiresBefore(LocalDateTime.now());
@@ -70,7 +67,7 @@ public class UserSession{
 
     //Reading cookie information 
     @GetMapping("/profile")
-    public ResponseEntity getProfile(@CookieValue(value = "session_token", defaultValue="guest")String session_token){
+    public ResponseEntity<Object> getProfile(@CookieValue(value = "session_token", defaultValue="guest")String session_token){
 
         //creating unauthorization for the user if they're not logged in 
         if(session_token.equals("guest")){
