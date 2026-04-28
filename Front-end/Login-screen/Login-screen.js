@@ -23,7 +23,8 @@ class userLogin{
 
             //fetching the mapped java function 
             fetch(`http://localhost:8080/user/login?email=${encodeURIComponent(email)}&pass=${encodeURIComponent(pass)}`,{
-                method : 'POST'
+                method : 'POST', 
+                credentials : 'include'
             })
             .then(response =>{return response.text()})//returns the variable statement to check if its true 
             .then(text => {
@@ -38,6 +39,7 @@ class userLogin{
                     headers : {
                         'Content-type' : 'application/json'
                     },
+                    credentials : 'include',
                     body : JsonData
                     })
                     .then(response =>{
