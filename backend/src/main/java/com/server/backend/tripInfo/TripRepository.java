@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 //creates an interface to allow for the databse to insert the information from java
 @Repository
-public interface TripRepository extends JpaRepository<Trip, List> {
-    List<Trip> findByDepatureAndArrival (Date depature, Date arrival);
+public interface TripRepository extends JpaRepository<Trip, TripEmbeddableId> {
+    List<Trip> findByTripIdDepartureAndFromCityAndToCity (Date departure, String fromcity, String tocity);
 }

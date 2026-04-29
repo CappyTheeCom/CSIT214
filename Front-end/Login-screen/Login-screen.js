@@ -37,7 +37,7 @@ class userLogin{
                     fetch(`http://localhost:8080/sesh/setToken`,{
                     method : 'POST',
                     headers : {
-                        'Content-type' : 'application/json'
+                        'Content-Type' : 'application/json'
                     },
                     credentials : 'include',
                     body : JsonData
@@ -58,7 +58,4 @@ class userLogin{
 
         })
     }
-
-
-
 }

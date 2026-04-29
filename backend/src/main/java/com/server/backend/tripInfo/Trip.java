@@ -1,8 +1,9 @@
 package com.server.backend.tripinfo;
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -18,12 +19,11 @@ public class Trip{
 
     @OneToOne(optional=false)
     @MapsId("planeId")
-    @JoinColumn(name="planeId", unique=true, nullable=false, updatable=false)
+    @JsonUnwrapped
     private Plane plane;
-
+ 
     private String fromCity; 
     private String toCity;  
-
 
     //creaitng JPA access 
     public Trip(){}

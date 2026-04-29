@@ -15,5 +15,4 @@ import lombok.NoArgsConstructor;
 public class TripEmbeddableId implements Serializable {
     private String planeId;
     private Date departure;
-    private Date arrival;
 }

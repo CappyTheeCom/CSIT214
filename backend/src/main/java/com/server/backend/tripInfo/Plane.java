@@ -1,4 +1,6 @@
 package com.server.backend.tripinfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -17,6 +19,7 @@ public class Plane{
 
     //mapping for the Trip class to allow for the connection 
     @OneToOne(optional=false, mappedBy="plane")
+    @JsonIgnore
     private Trip trip;
 
 
