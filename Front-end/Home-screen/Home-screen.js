@@ -9,8 +9,8 @@ class flightInfo{
 
     //creating constructor
     constructor(){
-        this.__from = document.getElementById('from')
-        this.__to = document.getElementById('to')
+        this.__fromCity = document.getElementById('fromCity')
+        this.__toCity = document.getElementById('toCity')
         this.__departure = document.getElementById('departure')
     }
 
@@ -19,11 +19,11 @@ class flightInfo{
         document.getElementById('submit').addEventListener('click', (e)=>{
             e.preventDefault()
 
-            const from = this.__from.value
-            const to = this.__to.value 
+            const fromCity = this.__fromCity.value
+            const toCity = this.__toCity.value 
             const departure = this.__departure.value 
 
-            const JsonData = JSON.stringify({departure,from,to})
+            const JsonData = JSON.stringify({departure,fromCity,toCity})
 
             fetch(`http://localhost:8080/trip/search`, {
                 method : 'POST', 

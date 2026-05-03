@@ -1,8 +1,6 @@
 package com.server.backend.tripinfo;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -22,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TripInfo{
 
     @Autowired
-    private  final TripRepository tripRepository;
+    private final TripRepository tripRepository;
 
 
     public TripInfo(TripRepository tripRepository){
@@ -33,8 +31,7 @@ public class TripInfo{
     @PostMapping(value = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Trip>> getTripInfo(@RequestBody Map<String, Object> body) throws ParseException{
         //created get methods to allow for the specific params to be taken rather than the whole class
-        String departureStr = (String) body.get("departure");
-        Date departure = new SimpleDateFormat("yyyy-MM-dd").parse(departureStr);
+        String departure = (String) body.get("departure");
         String fromCity = (String) body.get("fromCity");
         String toCity = (String) body.get("toCity");
 
@@ -43,6 +40,8 @@ public class TripInfo{
         //checks if the input list is empty for the search
         if(flightInfo.isEmpty()){
             System.out.println("No flight information exists!");
+            System.out.println("departure: " + departure);
+            System.out.println("From: " + fromCity + ", To: " + toCity);
             return ResponseEntity.noContent().build();
         }
         //else it returns the given responses
