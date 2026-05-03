@@ -41,10 +41,17 @@ class TicketInfo{
                     <div>Available Seats: ${trip.avaSeat}</div>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary btn-sm">Select</button>
+                    <button type="button" class="btn btn-primary btn-sm" id="selectTrip">Select</button>
                 </div>
             `;
+
+            //attaching listener event when displaying information 
+            li.querySelector('selectTrip').addEventListener('click', () => {
+                document.getElementById('modalCities').textContent = `${trip.fromCity} → ${trip.toCity}`;
+                document.getElementById('modalTimes').textContent = `${trip.depTime} → ${trip.arvTime}`;
+            })
             ul.appendChild(li)
         });
     }
+
 }
