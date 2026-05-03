@@ -3,10 +3,32 @@
     <!--Home screen CSS-->
     <header>
         <link rel="stylesheet" href="Home-screen.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="Home-screen.js" defer></script>
     </header>
-
     <body>
+        <!-- Navigation bar for login and sign up-->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">FlyDream</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Home-screen.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Front-end/Login-screen/Login-screen.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Front-end/Login-screen/SignIn-screen.html">Sign-up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
         <!-- creating the cotainer of the home page-->
         <div class="home-component">
@@ -46,12 +68,6 @@
                     <button type="reset">Clear</button>
                 </div>
             <!-- The flight container-->
-            </div>
-
-            <!-- Making the sign in option/ sign up-->
-            <div class="user-signIn">
-                <button type="button">Login-in!</button>
-                <button type="button">Sign-up!</button>
             </div>
         </div>
     </body>
