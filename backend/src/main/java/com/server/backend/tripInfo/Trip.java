@@ -37,8 +37,8 @@ public class Trip{
     public Plane getPlane() {return plane;}
     public String getFromCity() {return fromCity;}
     public String getToCity() {return toCity;}
-    public String getdepTime() {return depTime;}
-    public String getarvTime() {return arvTime;}
+    public String getDepTime() {return depTime;}
+    public String getArvTime() {return arvTime;}
     public TripEmbeddableId getTripId() { return tripId; }
 }
 

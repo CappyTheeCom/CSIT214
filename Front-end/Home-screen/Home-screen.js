@@ -37,7 +37,11 @@ class flightInfo{
                 return response.json()
             })
             .then(data => {
-                console.log('Flight info:', data)
+                let params = new URLSearchParams();
+                params.append("fromCity", fromCity);
+                params.append("toCity", toCity);
+                params.append("departure", departure); 
+                window.location.href = '/Front-end/bookFlight-screen/bookFlight-screen.html?' + params.toString();
             })
             .catch(error => {console.log('Error', error)})
         })

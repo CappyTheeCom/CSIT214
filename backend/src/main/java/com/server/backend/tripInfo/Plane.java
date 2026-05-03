@@ -12,7 +12,8 @@ public class Plane{
 
     @Id
     private String planeId;
-    private int avaSeat; 
+    private int avaSeat;
+    private String brandName; 
 
     //creating initalisation for JPA-repository 
     public Plane(){}
@@ -24,6 +25,7 @@ public class Plane{
 
 
     public String getPlaneId() {return planeId;}
+    public String getBrandName() {return brandName;}
     public int getAvaSeat() {return avaSeat;}
     public Trip getTrip() {return trip;}
 }
