@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-    const ticket = new TicketInfo()
+    const ticket = new TicketInfo();
 
     ticket.retrieveJson();
 })
@@ -36,12 +36,18 @@ class TicketInfo{
             li.innerHTML =`
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">${trip.airline}</div>
+                    <div class="departure">${trip.departure}</div>
                     <div>Departure: ${trip.depTime}</div>
                     <div>Arrival: ${trip.arvTime}</div>
                     <div>Available Seats: ${trip.avaSeat}</div>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary btn-sm" id="selectTrip">Select</button>
+                    <div>
+                        <h4 id="tPrice">"$" + ${trip.price}</div>
+                    </div>
+                    <div class="ms-4 mt-3">
+                        <button type="button" class="btn btn-primary btn-sm" id="selectTrip">Select</button>
+                    </div>
                 </div>
             `;
 

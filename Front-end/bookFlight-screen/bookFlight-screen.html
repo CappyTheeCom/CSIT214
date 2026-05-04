@@ -63,12 +63,18 @@
             <li class="list-group-item d-flex justify-content-between align-items-start">
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">QANTAS</div>
+                    <div id="departure">27/05/2026</div>
                     <div id="dep_time">Departure: 1:30pm </div>
                     <div id="arv_time">Arrival: 3:15pm </div>
                     <div id="avSeats">Avialable seats: 2 </div>
                 </div>
                 <div>
-                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#baggageModal" id="selectTrip">Select</button>
+                    <div>
+                        <h4 id="tPrice">$245.00</h4>
+                    </div>
+                    <div class="ms-4 mt-3">
+                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#baggageModal" id="selectTrip">Select</button>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -121,7 +127,6 @@
                             <input class="form-check-input" type="radio" name="baggageWeight" id="baggageWeight1" value="option1">
                             <label class="form-check-label" for="baggageWeight">30KG + $54</label>
                         </div>
-                        
                     </form>
                 </div>
                 <div class="modal-footer">
