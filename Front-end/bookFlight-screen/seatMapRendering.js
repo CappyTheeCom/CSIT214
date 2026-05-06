@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const seatMapping = new SeatMap();
 
     seatMapping.seatRender();
+    seatMapping.seatStore();
 
 })
 
@@ -31,7 +32,9 @@ class SeatMap{
                         const seatBtn = document.createElement('input');
                         seatBtn.type = 'checkbox';
                         seatBtn.className = 'btn-check';
-                        seatBtn.id = `${row}${seatNum}`
+                        seatBtn.id = `${row}${seatNum}`;
+                        seatBtn.name = `flightSeat`;
+                        seatBtn.value = `${row}${seatNum}`;
                         seatBtn.autocomplete = 'off';
 
                         const seatName = document.createElement('label');
@@ -55,5 +58,23 @@ class SeatMap{
                
             });
         }
+    }
+
+    //transfering user seat selection in relation to the flyers-info
+    seatStore(){
+        const cacheData = sessionStorage.getItem('tripInfo')
+        document.getElementById('confirmTrip').addEventListener('click', () => {
+            if(cacheData !== null){
+                const dataObject = JSON.parse(cacheData);
+                const seatSelect = document.querySelectorAll('input[type="checkbox"]:checked');
+                const seatValue = [...seatSelect].map(check => check.value); // turns node-list into a proper-arrary 
+
+                dataObject["seats"] = seatValue;
+
+                sessionStorage.setItem('tripInfo', JSON.stringify(dataObject));
+                window.location.href = 'bookExtra-screen.html';
+                
+            }
+        })            
     }
 }
