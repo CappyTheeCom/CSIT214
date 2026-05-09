@@ -31,7 +31,7 @@ class TripInfo{
         //displaying the json file
         trips.forEach(trip => {
             const li = document.createElement('li');
-            li.className = 'list-group-item d-flex justify-content-between align-items-start';
+            li.className = 'list-group-item d-flex justify-content-between align-items-start border-2';
             li.innerHTML =`
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">${trip.airLine}</div>
@@ -74,6 +74,11 @@ class TripInfo{
             const baggageWeight = document.querySelector('input[name="baggageWeight"]:checked')
             const carryValue = carryOnWeight.value;
             const baggageValue = baggageWeight.value;
+
+
+            let total = parseFloat(trip.tPrice);
+            let carryCost = 0;
+            let baggageCost = 0;
             
             const tripInfo = {
             airline: trip.airLine,
@@ -81,12 +86,38 @@ class TripInfo{
             date: trip.tripId.departure, 
             departure: trip.tripId.depTime, 
             arrival: trip.tripId.arvTime,
+            total: trip.tPrice.toFixed(2),
             carryOn: carryValue, 
             checkedBaggage : baggageValue
             };
 
+            //adding baggage costs 
+            if(carryValue === '20kg'){
+                total+= 20;
+                carryCost+= 20;
+            }
+
+
+            if(baggageValue === '15kg'){
+                total += 29;
+                baggageCost+= 29;
+            }
+            else if(baggageValue === '20kg'){
+                total+= 36;
+                baggageCost+= 36;
+            }
+            else if(baggageValue === '30kg'){
+                total+= 54
+                baggageCost+= 54;
+            };
+
+
+            tripInfo.total = total.toFixed(2);
+            tripInfo.cCost = carryCost;
+            tripInfo.bCost = baggageCost;
+
             //caching into session file
-            sessionStorage.setItem('tripInfo', JSON.stringify(tripInfo));
+            sessionStorage.setItem('ticketInfo', JSON.stringify(tripInfo));
             window.location.href = 'bookSeat-screen.html';
         };
         //preventing double firing from happening when selecting the flight

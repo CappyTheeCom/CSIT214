@@ -29,40 +29,39 @@
         </div>
     </nav>
 
-    <div class="mx-auto p-2 mt-3" style="width: 500px;">
+    <div class="row justify-content-center mt-5 pt-3">
         <!--Creating search bar nav for the ticket-->
-        <div class="container">
-            <nav class="navbar navbar-expand-lg bg-primary navbar-dark shadow-sm rounded-pill" style="margin-top: 56px;">
-                <div class="container-fluid justify-content-center">
-                    <ul class="navbar-nav justify-content-center">
-                        <li class="nav-item border-end border-3 pe-2">
+        <div class="col-auto">
+            <nav class="navbar bg-primary navbar-dark shadow-sm rounded-pill px-2">
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item border-end border-3 p-2">
                             <a class="nav-link" href="/Front-end/bookFlight-screen/bookFlight-screen.html">Flights</a>
                         </li>
-                        <li class="nav-item border-end border-3 pe-2">
+                        <li class="nav-item border-end border-3 p-2">
                             <a class="nav-link" href="/Front-end/bookFlight-screen/bookSeat-screen.html">Seats</a>
                         </li>
-                        <li class="nav-item border-end border-3 pe-2">
+                        <li class="nav-item border-end border-3 p-2">
                             <a class="nav-link active" href="/Front-end/bookFlight-screen/bookExtra-screen.html">Extra's</a>
                         </li>
-                        <li class="nav-item border-end border-3 pe-2">
+                        <li class="nav-item border-end border-3 p-2">
                             <a class="nav-link" href="/Front-end/bookFlight-screen/bookDetail.html">Details</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item p-2">
                             <a class="nav-link" href="/Front-end/bookFlight-screen/bookPayment.html">Payment</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
-    </div>
+    </div>    
 
     <div class="container text-center">
-        <h3 class="mt-2">Food selection</h3>
+        <h3 class="my-2">Food selection</h3>
     </div>
 
     <!--Creating food and beverage choices-->
-    <div class="cotainer text-center d-flex justify-content-center">
-        <div class="row row-cols-lg-auto g-0 mt-3">
+    <div class="cotainer text-center d-flex justify-content-center mb-5">
+        <div class="row row-cols-lg-auto g-0 mt-3 shadow border border-2">
 
             <div class="col">
                 <div class="card align-items-center" style="width: 18rem;">
@@ -105,8 +104,12 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
+    <div class="container  d-flex justify-content-center my-5"> 
+        <a href="bookDetail.html">
+            <button type="button" class="btn btn-lg btn-primary" id="skip">Save and Continue</button>
+        </a>
+    </div>
 </body>
+
