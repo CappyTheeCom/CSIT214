@@ -3,6 +3,7 @@
     <meta charset="UTF-8"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="bookPayment.js" defer></script>
 </head>
 <body>
     <!-- Navigation bar for login and sign up-->
@@ -53,5 +54,56 @@
                 </div>
             </nav>
         </div>
+    </div>
+
+
+
+    <div class="d-flex justify-content-center m-5">
+        <form class="w-75 border border-2 shadow mt-2">
+            <h4 class="text-center">Payment Info</h4>
+            <div class="gap-2 m-4">
+                <div class ="row">
+                    <div class="col mb-3 w-75">
+                        <label for="cardName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="cardName">
+                    </div>
+                    <div class="col mb-3 w-75">
+                        <label for="cardNum" class="form-label">Card-Number</label>
+                        <input type="text" class="form-control" id="cardNum">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col mb-3 w-75">
+                        <label for="cardCVC" class="form-label">CVC</label>
+                        <input type="text" class="form-control" id="cardCVC">
+                    </div>
+                    <div class=" col mb-3 w-75">
+                        <label for="expCard" class="form-label">Expiration-Date</label>
+                        <input type="date" class="form-control" id="expCard">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class=" col mb-3 w-75">
+                        <label for="phoneNum" class="form-label">Phone-Number</label>
+                        <input type="text" class="form-control" id="phoneNum">
+                    </div>
+                    <div class="col mb-3 w-75">
+                        <label for="payEmail" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="payEmail">
+                    </div>
+                </div>
+                <div class="pt-5">
+                    <h3>Total Cost:</h3>
+                    <h3 id="ticketCost"></h3>
+                    <div class="pt-3">
+                        <legend>Summary</legend>
+                        <div id="summaryCost"></div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center m-5">
+                    <button type="submit" class="btn btn-primary btn-lg mt-3">Submit</button>
+                </div>
+            </div>    
+        </form>
     </div>
 </body>
