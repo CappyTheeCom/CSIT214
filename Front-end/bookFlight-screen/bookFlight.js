@@ -83,9 +83,11 @@ class TripInfo{
             const tripInfo = {
             airline: trip.airLine,
             plane : trip.tripId.planeId, 
-            date: trip.tripId.departure, 
-            departure: trip.tripId.depTime, 
-            arrival: trip.tripId.arvTime,
+            date: trip.tripId.departure,
+            departure: trip.fromCity,
+            arrival: trip.toCity, 
+            depTime: trip.tripId.depTime, 
+            arvTime: trip.tripId.arvTime,
             total: trip.tPrice.toFixed(2),
             carryOn: carryValue, 
             checkedBaggage : baggageValue

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const ticket = new TicektDetials()
 
     ticket.displayTickets();
+    ticket.userNames();
 });
 
 class TicektDetials{
@@ -33,15 +34,15 @@ class TicektDetials{
                             <div class="d-flex flex-column align-items-center gap-2 m-4">
                                 <div class="w-75">
                                     <label for="${type}${i}Fname">First Name:</label>
-                                    <input type="text" class="form-control"id="${type}${i}Fname" name="${type}${i}Fname">
+                                    <input type="text" class="form-control"id="${type}${i}Fname" name="Fname">
                                 </div>
                                 <div class="w-75">
                                     <label for="${type}${i}Lname">Last Name:</label>
-                                    <input type="text" class="form-control" id="${type}${i}Lname" name="${type}${i}Lname">
+                                    <input type="text" class="form-control" id="${type}${i}Lname" name="Lname">
                                 </div>
                                 <div class="w-75">
                                     <label for="${type}${i}DOB">DOB:</label>
-                                    <input type="text" class="form-control" id="${type}${i}DOB" name="${type}${i}DOB">
+                                    <input type="text" class="form-control" id="${type}${i}DOB" name="DOB">
                                 </div>
                             </div>
                     `;
@@ -51,6 +52,21 @@ class TicektDetials{
         });
 
         container.appendChild(form);
+    }
+
+    userNames(){
+
+        const dataObject = JSON.parse(sessionStorage.getItem('ticketInfo'));
+        const submitBtn = document.getElementById('submitBtn')
+
+        submitBtn.addEventListener('click', () => {
+            const inputs = document.querySelectorAll('input[name="Fname"],input[name="Lname"]');
+            const pasName = [...inputs].map(check => check.value)
+            dataObject["passengerName"] = pasName.join(' ');
+            sessionStorage.setItem('ticketInfo', JSON.stringify(dataObject));
+
+            window.location.href ='bookPayment.html';
+        })
     }
 
 }

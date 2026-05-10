@@ -3,7 +3,9 @@
     <!--Home screen CSS-->
     <header>
         <link rel="stylesheet" href="Home-screen.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
         <script src="Home-screen.js" defer></script>
     </header>
     <body>
@@ -20,6 +22,9 @@
                             <a class="nav-link active" aria-current="page" href="Home-screen.html">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/Front-end/Travel-Info/user-flight-info.html">Travel Info</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/Front-end/Login-screen/Login-screen.html">Login</a>
                         </li>
                         <li class="nav-item">
@@ -31,41 +36,49 @@
         </nav>
 
         <!-- creating the cotainer of the home page-->
-        <div class="home-component">
+        <div class="container border border-2 shadow bg-primary-subtle w-75 rounded-5">
             <!--creating search field to see if anything available-->
-            <div class="flight-booking">
+            <div>
                 <div>
-                    <h2 class="flight-title"> Look for a flight</h2>
+                    <h2 class="py-5 fw-bold"> Search flight</h2>
                 </div>
 
-                <form class="form-grid"> 
+                <form class="d-flex justify-content-between"> 
 
 
-                    <div class="from-flight">
-                        <label for="fromCity">From:</label>
-                        <input type="text"  id="fromCity" placeholder="e.g sydney"  value="melbourne" required>
+                    <div class="row border border-2">
+                        <div class="col-2 fw-bold">
+                            <label for="fromCity">From:</label>
+                        </div>
+                        <div class="col">
+                            <input type="text"  class="form-control" id="fromCity" placeholder="e.g sydney"  value="melbourne" required>
+                        </div>
                     </div>
 
 
-                    <div class="to-flight">
-                        <label for="toCity">To:</label>
-                        <input type="text"  id="toCity" placeholder="e.g melbourne" value="sydney" required>
+                    <div class="row">
+                        <div class="col-1 fw-bold">
+                            <label for="toCity">To:</label>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="toCity" placeholder="e.g melbourne" value="sydney" required>
+                        </div>
                     </div>
 
-                    <div class="departure-flght">
-                        <label for="departure">Departure:</label>
-                        <input type="date"  id="departure" value="2026-05-27" required>
+                    <div class="row gap-2">
+                        <div class="col-3 fw-bold">
+                            <label for="departure">Departure:</label>
+                        </div>
+                        <div class="col">
+                             <input type="date" class="form-control" id="departure" value="2026-05-27" required>
+                        </div>
                     </div>
 
-                    <div>
-                        <label for="traveller">Travellers: </label>
-                        <input type="number" min="1" step="1" id="traveller" value="1" required>
-                    </div>
                 </form>
 
-                <div> 
-                    <input type="button" value="submit" id="submit">
-                    <button type="reset">Clear</button>
+                <div class="pt-4 mb-4"> 
+                    <input type="button" value="submit" id="submit" class="btn btn-lg btn-primary">
+                    <button type="reset" class="btn btn-lg btn-secondary">Clear</button>
                 </div>
             <!-- The flight container-->
             </div>
