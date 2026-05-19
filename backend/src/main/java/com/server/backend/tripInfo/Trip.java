@@ -35,5 +35,9 @@ public class Trip{
     public String getToCity() {return toCity;}
     public float getTPrice() {return tPrice;}
     public TripEmbeddableId getTripId() { return tripId;}
+
+    public String getDeparture() { return tripId.getDeparture(); }
+    public String getDepTime() { return tripId.getDepTime(); }
+    public String getArvTime() { return tripId.getArvTime(); }
 }
 
