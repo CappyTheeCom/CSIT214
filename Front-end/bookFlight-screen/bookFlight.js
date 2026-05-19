@@ -8,7 +8,7 @@ class TripInfo{
 
     async retrieveJson(){
         const params = new URLSearchParams(window.location.search)
-        const response = await fetch('http://localhost:8080/trip/search', {
+        const response = await fetch('https://csit214-production.up.railway.app/trip/search', {
             method: 'POST',
             headers:{
                 'Content-Type' : 'application/json'

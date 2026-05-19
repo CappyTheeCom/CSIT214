@@ -25,7 +25,7 @@ class flightInfo{
 
             const JsonData = JSON.stringify({departure,fromCity,toCity})
 
-            fetch(`http://localhost:8080/trip/search`, {
+            fetch(`https://csit214-production.up.railway.app/trip/search`, {
                 method : 'POST', 
                 headers : {
                     'Content-Type' : 'application/json'
@@ -41,7 +41,7 @@ class flightInfo{
                 params.append("fromCity", fromCity);
                 params.append("toCity", toCity);
                 params.append("departure", departure); 
-                window.location.href = 'bookFlight-screen/bookFlight-screen.html?' + params.toString();
+                window.location.href = '/bookFlight-screen/bookFlight-screen.html?' + params.toString();
             })
             .catch(error => {console.log('Error', error)})
         })
