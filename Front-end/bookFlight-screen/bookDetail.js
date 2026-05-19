@@ -34,15 +34,15 @@ class TicektDetials{
                             <div class="d-flex flex-column align-items-center gap-2 m-4">
                                 <div class="w-75">
                                     <label for="${type}${i}Fname">First Name:</label>
-                                    <input type="text" class="form-control"id="${type}${i}Fname" name="Fname">
+                                    <input type="text" class="form-control"id="${type}${i}Fname" name="Fname" required>
                                 </div>
                                 <div class="w-75">
                                     <label for="${type}${i}Lname">Last Name:</label>
-                                    <input type="text" class="form-control" id="${type}${i}Lname" name="Lname">
+                                    <input type="text" class="form-control" id="${type}${i}Lname" name="Lname" required>
                                 </div>
                                 <div class="w-75">
                                     <label for="${type}${i}DOB">DOB:</label>
-                                    <input type="text" class="form-control" id="${type}${i}DOB" name="DOB">
+                                    <input type="text" class="form-control" id="${type}${i}DOB" name="DOB" required>
                                 </div>
                             </div>
                     `;
