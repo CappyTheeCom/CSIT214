@@ -120,7 +120,7 @@ class TripInfo{
 
             //caching into session file
             sessionStorage.setItem('ticketInfo', JSON.stringify(tripInfo));
-            window.location.href = 'bookSeat-screen.html';
+            window.location.href = '/bookFlight-screen/bookSeat-screen.html';
         };
         //preventing double firing from happening when selecting the flight
         confirmBtn.removeEventListener('click', handleConfirm);

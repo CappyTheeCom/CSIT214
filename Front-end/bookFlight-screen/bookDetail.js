@@ -65,7 +65,7 @@ class TicektDetials{
             dataObject["passengerName"] = pasName.join(' ');
             sessionStorage.setItem('ticketInfo', JSON.stringify(dataObject));
 
-            window.location.href ='bookPayment.html';
+            window.location.href ='/bookFlight-screen/bookPayment.html';
         })
     }
 

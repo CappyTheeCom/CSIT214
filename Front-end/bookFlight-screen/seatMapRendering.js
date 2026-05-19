@@ -201,7 +201,7 @@ class DataStorage{
                 dataObject["seats"] = seatValue;
 
                 sessionStorage.setItem('ticketInfo', JSON.stringify(dataObject));
-                window.location.href = 'bookExtra-screen.html';
+                window.location.href = '/bookFlight-screen/bookExtra-screen.html';
                    
             }
     }
