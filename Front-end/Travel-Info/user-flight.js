@@ -22,7 +22,7 @@ function getFlights() {
         terminal: 'Terminal 1', // You might want to add this to your flight data
       },
       arrival: {
-        time: ooking.flight.arrivalTime,
+        time: booking.flight.arrivalTime,
         airport: booking.flight.to,
         terminal: 'Terminal 1', // You might want to add this to your flight data
       },
