@@ -2,7 +2,6 @@ package com.server.backend.userinfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 //Allows for the file to be accessed locally on the laptop 
 @RestController 
 @RequestMapping("/user")
-@CrossOrigin(origins = "https://csit-214-o6s6c2mo8-cappytheecoms-projects.vercel.app/") 
 public class UserInformation{
 
 	@Autowired
