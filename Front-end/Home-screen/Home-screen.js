@@ -25,7 +25,7 @@ class flightInfo{
 
             const JsonData = JSON.stringify({departure,fromCity,toCity})
 
-            fetch(`http://localhost:8080/trip/search`, {
+            fetch(`https://csit214-production.up.railway.app/trip/search`, {
                 method : 'POST', 
                 headers : {
                     'Content-Type' : 'application/json'
