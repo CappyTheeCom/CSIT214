@@ -35,9 +35,9 @@ class TripInfo{
             li.innerHTML =`
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">${trip.airLine}</div>
-                    <div class="departure">${trip.tripId.departure}</div>
-                    <div>Departure: ${trip.tripId.depTime}</div>
-                    <div>Arrival: ${trip.tripId.arvTime}</div>
+                    <div class="departure">${trip.departure}</div>
+                    <div>Departure: ${trip.depTime}</div>
+                    <div>Arrival: ${trip.arvTime}</div>
                     <div>Available Seats: ${trip.avaSeat}</div>
                 </div>
                 <div>
@@ -54,7 +54,7 @@ class TripInfo{
             const button = li.querySelector('#selectTrip');
             button.addEventListener('click', () => {
                 document.getElementById('modalCities').textContent = `${trip.fromCity} → ${trip.toCity}`;
-                document.getElementById('modalTimes').textContent = `${trip.tripId.depTime} → ${trip.tripId.arvTime}`;
+                document.getElementById('modalTimes').textContent = `${trip.depTime} → ${trip.arvTime}`;
                 this.storeFlightInfo(trip);
             })
             ul.appendChild(li)
@@ -82,12 +82,12 @@ class TripInfo{
             
             const tripInfo = {
             airline: trip.airLine,
-            plane : trip.tripId.planeId, 
-            date: trip.tripId.departure,
+            plane : trip.planeId, 
+            date: trip.departure,
             departure: trip.fromCity,
             arrival: trip.toCity, 
-            depTime: trip.tripId.depTime, 
-            arvTime: trip.tripId.arvTime,
+            depTime: trip.depTime, 
+            arvTime: trip.arvTime,
             total: trip.tPrice.toFixed(2),
             carryOn: carryValue, 
             checkedBaggage : baggageValue
