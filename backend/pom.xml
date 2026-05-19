@@ -73,10 +73,17 @@
 			<artifactId>com.dbeaver.jdbc.driver.libsql</artifactId>
 			<version>1.0.2</version>
 		</dependency>
-		
-	</dependencies>
 
+	</dependencies>
+	
+	
 	<build>
+		<resources>
+			<resource>
+				<directory>resource</directory>
+			</resource>
+		</resources>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
