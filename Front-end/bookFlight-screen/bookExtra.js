@@ -34,7 +34,7 @@ class Addons{
                 dataObject["total"] = tripCost;
                 dataObject["fCost"] = fCost;
                 sessionStorage.setItem('ticketInfo', JSON.stringify(dataObject));
-                window.location.href = 'bookDetail.html';
+                window.location.href = '/bookFlight-screen/bookDetail.html';
             
             })
         });
