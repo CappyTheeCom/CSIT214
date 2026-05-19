@@ -120,7 +120,7 @@ function createFlightCard(flight) {
             </div>
 
             <div class="mt-8 flex gap-4">
-                <button onclick="localStorage.setItem('selectedFlightId', '${flight.id}'); window.location.href='/Front-end/Travel-info/complaint.html'"
+                <button onclick="localStorage.setItem('selectedFlightId', '${flight.id}'); window.location.href='/Travel-info/complaint.html'"
                     class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                     Manage Flight
                 </button>
