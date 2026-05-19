@@ -17,12 +17,12 @@ function getFlights() {
       route: `${booking.flight.from} → ${booking.flight.to}`,
       status: flightDate > now ? 'Confirmed' : 'Completed',
       departure: {
-        time: formatTime(booking.flight.departTime),
+        time: booking.flight.departTime,
         airport: booking.flight.from,
         terminal: 'Terminal 1', // You might want to add this to your flight data
       },
       arrival: {
-        time: formatTime(booking.flight.arrivalTime),
+        time: ooking.flight.arrivalTime,
         airport: booking.flight.to,
         terminal: 'Terminal 1', // You might want to add this to your flight data
       },
@@ -69,14 +69,6 @@ function getFlights() {
 }
 
 
-// Helper function to format time string
-function formatTime(timeStr) {
-  const [hours, minutes] = timeStr.split(':');
-  const hour = parseInt(hours);
-  const ampm = hour >= 12 ? 'PM' : 'AM';
-  const hour12 = hour % 12 || 12;
-  return `${hour12}:${minutes}`;
-}
 
 // Function to create flight card HTML
 function createFlightCard(flight) {
