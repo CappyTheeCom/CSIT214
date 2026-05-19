@@ -2,6 +2,8 @@ package com.server.backend.tripinfo;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TripEmbeddableId implements Serializable {
+    @JsonIgnore
     private String planeId;
     private String departure;
     private String depTime;

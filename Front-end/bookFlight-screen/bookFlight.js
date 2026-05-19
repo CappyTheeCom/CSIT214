@@ -35,7 +35,7 @@ class TripInfo{
             li.innerHTML =`
                 <div class="ms-2 me-auto">
                     <div class="fw-bold">${trip.airLine}</div>
-                    <div class="departure">${trip.departure}</div>
+                    <div class="departure">${trip.tripId.departure}</div>
                     <div>Departure: ${trip.tripId.depTime}</div>
                     <div>Arrival: ${trip.tripId.arvTime}</div>
                     <div>Available Seats: ${trip.avaSeat}</div>
