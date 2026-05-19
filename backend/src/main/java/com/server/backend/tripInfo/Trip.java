@@ -15,7 +15,6 @@ import jakarta.persistence.Table;
 public class Trip{
 
     @EmbeddedId
-    @JsonUnwrapped
     private TripEmbeddableId tripId;
 
     @OneToOne(optional=false)
