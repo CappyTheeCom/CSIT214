@@ -41,7 +41,7 @@ class flightInfo{
                 params.append("fromCity", fromCity);
                 params.append("toCity", toCity);
                 params.append("departure", departure); 
-                window.location.href = '/Front-end/bookFlight-screen/bookFlight-screen.html?' + params.toString();
+                window.location.href = 'bookFlight-screen/bookFlight-screen.html?' + params.toString();
             })
             .catch(error => {console.log('Error', error)})
         })
