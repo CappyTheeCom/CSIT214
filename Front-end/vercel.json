@@ -1,11 +1,5 @@
 {
   "rewrites": [
-    { "source": "/Home-screen/Home-screen.css", "destination": "/Home-screen/Home-screen.css" },
-    { "source": "/Home-screen/Home-screen.js", "destination": "/Home-screen/Home-screen.js" },
-    { "source": "/Login-screen/Login-screen.css", "destination": "/Login-screen/Login-screen.css" },
-    { "source": "/Login-screen/Login-screen.js", "destination": "/Login-screen/Login-screen.js" },
-    { "source": "/bookFlight-screen/bookFlight-screen.css", "destination": "/bookFlight-screen/bookFlight-screen.css" },
-    { "source": "/bookFlight-screen/bookFlight-screen.js", "destination": "/bookFlight-screen/bookFlight-screen.js" },
     { "source": "/", "destination": "/Home-screen/Home-screen.html" },
     { "source": "/home", "destination": "/Home-screen/Home-screen.html" },
     { "source": "/login", "destination": "/Login-screen/Login-screen.html" },
