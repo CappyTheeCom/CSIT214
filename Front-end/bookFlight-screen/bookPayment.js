@@ -76,6 +76,6 @@ class PaymentInfo{
         };
 
             localStorage.setItem('bookedFlights', JSON.stringify(bookedFlights));
-            window.location.href = '/Front-end/Home-screen/Home-screen.html';
+            window.location.href ='/Home-screen/Home-screen.html';
         });
 }   }
