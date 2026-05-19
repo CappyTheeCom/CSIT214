@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 //Allows for the file to be accessed locally on the laptop 
 @RestController 
 @RequestMapping("/user")
-@CrossOrigin(origins = "https://*.vercel.app") 
+@CrossOrigin(origins = "https://csit-214-o6s6c2mo8-cappytheecoms-projects.vercel.app/") 
 public class UserInformation{
 
 	@Autowired
