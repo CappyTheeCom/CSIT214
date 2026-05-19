@@ -3,7 +3,7 @@
     { "source": "/", "destination": "/Home-screen/Home-screen.html" },
     { "source": "/home", "destination": "/Home-screen/Home-screen.html" },
     { "source": "/login", "destination": "/Login-screen/Login-screen.html" },
-    { "source": "/sign-in", "destination": "/Login-screen/Signin-screen.html" },
+    { "source": "/sign-in", "destination": "/Login-screen/SignIn-screen.html" },
     { "source": "/book-flight", "destination": "/bookFlight-screen/bookFlight-screen.html" },
     { "source": "/book-payment", "destination": "/bookFlight-screen/bookPayment.html" },
     { "source": "/book-seat", "destination": "/bookFlight-screen/bookSeat-screen.html" },
