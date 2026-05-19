@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/trip")
-@CrossOrigin(origins = "http://127.0.0.1:5500", allowCredentials="true")
+@CrossOrigin(origins = "http://*.vercel.app", allowCredentials="true")
 public class TripInfo{
 
     @Autowired
