@@ -1,5 +1,7 @@
 package com.server.backend.tripinfo;
 
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.MapsId;
@@ -17,6 +19,7 @@ public class Trip{
 
     @OneToOne(optional=false)
     @MapsId("planeId")
+    @JsonUnwrapped
     private Plane plane;
  
     private String fromCity; 
