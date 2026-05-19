@@ -1,5 +1,6 @@
 package com.server.backend.tripinfo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
 import jakarta.persistence.EmbeddedId;
@@ -33,6 +34,7 @@ public class Trip{
     public String getFromCity() {return fromCity;}
     public String getToCity() {return toCity;}
     public float getTPrice() {return tPrice;}
+    @JsonProperty("tripId")
     public TripEmbeddableId getTripId() { return tripId;}
 }
 
